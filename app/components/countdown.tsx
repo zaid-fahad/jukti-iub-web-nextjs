@@ -16,7 +16,7 @@ const CountdownSection = () => {
               Stay tuned for exciting
               <span>
                 <a
-                  href="/upevent.html"
+                  href="/eventPage"
                   className="text-orange fw-bold"
                   style={{ textDecoration: "none" }}
                 >
@@ -31,19 +31,19 @@ const CountdownSection = () => {
               <div className="col-3 count-text">
                 <div className="    text-center mb-4">Days</div>
                 <div id="days" className=" text-center mb-4">
-                  00
+                  10
                 </div>
               </div>
               <div className="col-3 count-text">
                 <div className="text-center mb-4">Hours</div>
                 <div id="hours" className="  text-center mb-4">
-                  00
+                  20
                 </div>
               </div>
               <div className="col-3 count-text">
                 <div className="text-center mb-4">Minutes</div>
                 <div id="minutes" className="  text-center mb-4">
-                  00
+                  20
                 </div>
               </div>
               <div className="col-3 count-text">

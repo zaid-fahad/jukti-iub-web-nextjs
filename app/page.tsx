@@ -10,6 +10,8 @@ import FAQSection from "./components/faq";
 import SwiperSection from "./components/swiper";
 import CountdownSection from "./components/countdown";
 import HeroSection from "./components/hero";
+import Footer from "./components/footer"
+import EventsCta from "./components/events_cta"
 
 const Home = () => {
   useEffect(() => {
@@ -118,8 +120,10 @@ const Home = () => {
       <ElevatedSection />
       <BenefitsSection />
       <SwiperSection />
-      <CountdownSection />
+      {/*<CountdownSection />*/}
+      <EventsCta/>
       <FAQSection />
+      <Footer />
     </>
   );
 };

@@ -23,20 +23,22 @@ const HeroSection = () => {
       </div>
       <div className="container py-4 py-sm-1 py-sm-5">
         <div className="row align-items-center py-5">
-          <div className="col-lg-6 p-0">
+          {/* Text section */}
+          <div className="col-lg-6 col-12 p-0 ps-4 order-2 order-lg-1">
             <div className="hero-text pb-5">
               <h1 className="display-3 fw-bold mb-3">
-                JUKTI{" "}
+                JUKTI{" "}<br></br>
                 <span className="display-6 d-block d-md-inline">
-                  <span className="d-none d-md-inline">-</span>The Official Club
-                  of CSE
+                The Official Club of CSE
                 </span>
               </h1>
               <p className="lead">
                 <span className="text-orange"> JUKTI </span> is the
-                Faculty-Student Club of Department of Computer Science and
+                Faculty-Student Club of the Department of Computer Science and
                 Engineering of Independent University, Bangladesh
+                
               </p>
+
               <a
                 href="#"
                 className="btn btn-dark-navy btn-lg btn-outline-orange me-4 mt-1 mt-sm-0"
@@ -45,13 +47,15 @@ const HeroSection = () => {
               </a>
             </div>
           </div>
-          <div className="col-lg-6 p-0 ps-4">
-            <div className="hero-image text-center d-none d-lg-block">
+
+          {/* Logo section */}
+          <div className="col-lg-6 col-12 p-0 text-center order-1 order-lg-2">
+            <div className="hero-image mb-4">
               <img
                 src="/img/jukti_logo.webp"
                 alt="Hero Image"
-                className="img-fluid mb-5"
-                style={{ width: "30%" }}
+                className="img-fluid"
+                style={{ maxWidth: "30%" }}
               />
             </div>
           </div>
@@ -60,4 +64,5 @@ const HeroSection = () => {
     </section>
   );
 };
+
 export default HeroSection;

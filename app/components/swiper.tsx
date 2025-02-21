@@ -1,6 +1,7 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import EventSlide from './event_slide'; // Assuming EventSlide component is properly created
 
 // Import Swiper styles
 import "swiper/css";
@@ -21,7 +22,7 @@ const SwiperSection = () => {
         style={{
           position: "relative",
           backgroundColor: "#081420",
-          minHeight: "60vh",
+          minHeight: "70vh",
         }}
       >
         <div className="custom-shape-divider-top-1686612771">
@@ -57,140 +58,59 @@ const SwiperSection = () => {
               effect={"coverflow"}
               grabCursor={true}
               centeredSlides={true}
-              slidesPerView={"auto"}
+              slidesPerView={"auto"} // Allow auto sizing based on slide content
+              spaceBetween={30} // Optional, for some spacing between slides
               coverflowEffect={{
                 rotate: 10,
                 stretch: 0,
                 depth: 100,
                 modifier: 1,
-                slideShadows: true,
+                slideShadows: false,
               }}
               autoplay={{
                 delay: 2500,
                 disableOnInteraction: false,
               }}
-              pagination={true}
+              pagination={false}
               modules={[EffectCoverflow, Pagination, Autoplay]}
-              // className="mySwiper"
             >
-              <SwiperSlide>
-                <img src="img\Events\e1.PNG" alt="Events #1" />
-                <div className="down-content bg-white px-5">
-                  <h4>Android App Dev Training</h4>
-                  <p>
-                    Program details: Room : Gallery - 5002 (level - 4)
-                    <br />
-                    • 1st Day ( May 28, 2015 - Thursday )<br />
-                    • 2nd Day ( May 29, 2015 - Friday )<br />• 3rd Day ( May 30,
-                    2015 - Saturday )
-                  </p>
-                  <div className="text-button-pay">
-                    <a href="#">
-                      View More <i className="fa fa-angle-double-right"></i>
-                    </a>
-                  </div>
-                </div>
+              {/* Add multiple SwiperSlide components with fixed size */}
+              <SwiperSlide style={{ width: "300px", height: "500px" }}>
+                <EventSlide
+                  imgSrc="img/Events/e1.PNG"
+                  title="Android App Dev Training"
+                  details={[
+                    "Program details: Room: Gallery - 5002 (Level - 4)",
+                    "• 1st Day (May 28, 2015 - Thursday)",
+                    "• 2nd Day (May 29, 2015 - Friday)",
+                    "• 3rd Day (May 30, 2015 - Saturday)"
+                  ]}
+                  link="/eventPage"
+                />
               </SwiperSlide>
-              <SwiperSlide>
-                <img src="img\Events\e2.PNG" alt="Event #2" />
-                <div className="down-content bg-white px-5">
-                  <h4>Python Workshop</h4>
-                  <p>
-                    JUKTI - Offical Club of CSE brings you a series of workshop
-                    on Python
-                    <br />
-                    Date: 6th February, 2020 (Every Thursday & Saturday)
-                  </p>
-                  <div className="text-button-pay">
-                    <a href="#">
-                      view more <i className="fa fa-angle-double-right"></i>
-                    </a>
-                  </div>
-                </div>
+              <SwiperSlide style={{ width: "300px", height: "500px" }}>
+                <EventSlide
+                  imgSrc="img/Events/e2.PNG"
+                  title="Web Development Workshop"
+                  details={[
+                    "Learn modern web technologies.",
+                    "• Date: June 10, 2015",
+                    "• Time: 10:00 AM - 3:00 PM"
+                  ]}
+                  link="/eventPage2"
+                />
               </SwiperSlide>
-              <SwiperSlide>
-                <img src="img\Events\e3.PNG" alt="Event #3" />
-                <div className="down-content bg-white px-5">
-                  <h4>BD's Game Industry</h4>
-                  <p>
-                    Game development is all about creativity and technical
-                    skills.
-                  </p>
-                  <div className="text-button-pay">
-                    <a href="#">
-                      view more <i className="fa fa-angle-double-right"></i>
-                    </a>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="img\Events\e4.PNG" alt="Event #4" />
-                <div className="down-content bg-white px-5">
-                  <h4>Essence of Clubbing</h4>
-                  <p>
-                    The most experienced individuals shared their side of the
-                    story and conveyed messages to all the students.
-                  </p>
-                  <div className="text-button-pay">
-                    <a href="#">
-                      View more <i className="fa fa-angle-double-right"></i>
-                    </a>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="img\Events\e5.PNG" alt="" />
-                <div className="down-content bg-white px-5">
-                  <h4>SPOTLIGHT</h4>
-                  <p>
-                    Our Guest Speaker for Spotlight was Mahamudul Hassan Tonmoy.
-                    Our Guest Speaker for Spotlight was Mahamudul Hassan Tonmoy
-                  </p>
-                  <div className="text-button-pay">
-                    <a href="#">
-                      View more <i className="fa fa-angle-double-right"></i>
-                    </a>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="img\Events\e6.PNG" alt="" />
-                <div className="down-content bg-white px-5">
-                  <h4>Explore Engineers Hub with JUKTI</h4>
-                  <p>
-                    our Guest Speaker A.S.M. Sadman Sakib, Founder & Director at
-                    Engineers Hub.
-                    <br />
-                    on 18th June 2021 at 8pm
-                  </p>
-                  <div className="text-button-pay">
-                    <a href="#">
-                      View more <i className="fa fa-angle-double-right"></i>
-                    </a>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="img\Events\e7.PNG" alt="" />
-                <div className="down-content bg-white px-5">
-                  <h4>Startup SPECTACLE</h4>
-                  <p>
-                    Guest Speaker: Nashid Ali, Founder & CEO of CloudCreative.
-                    <br />
-                    Time: on 21st August at 8 PM
-                  </p>
-                  <div className="text-button-pay">
-                    <a href="#">
-                      View more <i className="fa fa-angle-double-right"></i>
-                    </a>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+              <SwiperSlide style={{ width: "300px", height: "500px" }}>
+                <EventSlide
+                  imgSrc="img/Events/e3.PNG"
+                  title="Tech Talk: AI in 2025"
+                  details={[
+                    "Insights from industry leaders.",
+                    "• Date: July 20, 2015",
+                    "• Venue: Main Auditorium"
+                  ]}
+                  link="/eventPage3"
+                />
               </SwiperSlide>
             </Swiper>
           </div>
@@ -199,4 +119,5 @@ const SwiperSection = () => {
     </>
   );
 };
+
 export default SwiperSection;
