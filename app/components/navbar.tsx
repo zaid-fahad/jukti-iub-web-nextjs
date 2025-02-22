@@ -54,6 +54,18 @@ const NavBar = () => {
             <li className="nav-item">
               <Nav.Link
                 className={`nav-Nav.Link fs-5 me-3 `}
+                href="/result"
+              >
+                <i
+                  className="d-inline d-lg-none fa-solid fa-user-pen me-2"
+                  style={{ color: "#f7f6ee" }}
+                ></i>
+                Result
+              </Nav.Link>
+            </li>
+            <li className="nav-item">
+              <Nav.Link
+                className={`nav-Nav.Link fs-5 me-3 `}
                 href="/aboutUs"
               >
                 <i

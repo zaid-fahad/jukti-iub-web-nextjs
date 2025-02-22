@@ -1,0 +1,41 @@
+.text-orange {
+  color: #f69546;
+}
+
+.btn-orange {
+  background-color: #f69546;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-orange:hover {
+  background-color: #e65c00;
+}
+
+.card {
+  border-radius: 15px;
+}
+
+input:focus {
+  box-shadow: 0 0 5px rgba(255, 102, 0, 0.5);
+  outline: none;
+  border-color: #ff6600;
+}
+
+/* Dark Green Success Alert */
+.alert-success-dark {
+  background-color: #198754;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+}
+.alert-fail-dark {
+  background-color: #dc3545;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+}
+

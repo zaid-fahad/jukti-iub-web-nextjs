@@ -2,6 +2,7 @@ import './globals.css'
 import './sass/main.css'
 import './sass/main.min.css'
 import NavBar from './components/navbar'
+import Footer from "./components/footer"
 import {Quicksand } from 'next/font/google'
 const quicksand = Quicksand({
   // weight: ['400', '700'],
@@ -21,8 +22,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={quicksand.className}>
-        <div className="sticky-top "><NavBar /></div>
-        <div>{children}</div>    
+        <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+        <div className="sticky-top " ><NavBar /></div>
+        <div>{children}</div> 
+        <div><Footer/></div>
+        </div>
       </body>
     </html>
   )

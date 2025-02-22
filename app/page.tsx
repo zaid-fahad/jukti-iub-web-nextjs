@@ -123,7 +123,7 @@ const Home = () => {
       {/*<CountdownSection />*/}
       <EventsCta/>
       <FAQSection />
-      <Footer />
+      {/*<Footer />*/}
     </>
   );
 };
