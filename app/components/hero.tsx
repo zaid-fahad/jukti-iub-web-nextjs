@@ -46,7 +46,7 @@ const HeroSection = () => {
                 Register now!
               </a>
               <a
-                href="#"
+                href="/result"
                 className="btn btn-lg btn-orange me-4 mt-1 mt-sm-0"
               >
                 Check Result!
