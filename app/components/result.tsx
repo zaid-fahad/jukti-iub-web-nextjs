@@ -3,11 +3,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./result.css";
+import AdminEasterEgg from "./AdminEasterEgg"; // Import the AdminEasterEgg component
 
 const Result = () => {
   const [studentId, setStudentId] = useState("");
   const [status, setStatus] = useState("");
+  const [name, setName] = useState(""); // Added state for name
   const [loading, setLoading] = useState(false);
+  const [imageUrl, setImageUrl] = useState(""); // Added state for image URL
 
   const checkStatus = async () => {
     if (studentId.length !== 7 || isNaN(Number(studentId))) {
@@ -16,18 +19,47 @@ const Result = () => {
     }
     setLoading(true);
     setStatus("");
+    setName(""); // Reset name when checking status
+    setImageUrl(""); // Reset image when checking status
 
     try {
-      // const response = await axios.get(`/api/status?id=${studentId}`);
-      // const result = response.data.status;
-      const result = "Rejected";
-      if (result === "Approved" || result === "Rejected") {
-        setStatus(result);
+      // Google Sheets CSV URL
+      const response = await axios.get(
+        `https://docs.google.com/spreadsheets/d/e/2PACX-1vTp4SiQjVtjtoCsoaUdbe5J1Bb5OCTFNyoZjdY_9qd62Xh4mUAXPVIRW6ys6PDppMwSi9SX1pZ-Bu9X/pub?output=csv`
+      );
+
+      const data = response.data;
+
+      // Log the fetched data for debugging
+      console.log("CSV Data:", data);
+
+      // Parse CSV data into an array of objects
+      const rows = data
+        .split("\n")
+        .slice(1) // Remove header row
+        .map((row) => {
+          const [id, name, status, imageUrl] = row.split(",");
+          return { id: id.trim(), name: name.trim(), status: status.trim(), imageUrl: imageUrl.trim() };
+        });
+
+      // Log the parsed rows for debugging
+      console.log("Parsed Rows:", rows);
+
+      // Find the status for the entered student ID
+      const student = rows.find((row) => row.id === studentId);
+
+      if (student) {
+        setName(student.name); // Set the student's name
+        setStatus(student.status);
+        if (student.status === "admin") {
+          setImageUrl(student.imageUrl); // Set the image URL if status is "admin"
+        }
       } else {
         setStatus("ID not found");
       }
     } catch (error) {
       setStatus("Error retrieving status. Please try again later.");
+      console.error("Error fetching data:", error);
     } finally {
       setLoading(false);
     }
@@ -46,7 +78,7 @@ const Result = () => {
       <div className="container my-5 custom-mg">
         <div className="row justify-content-center">
           <div className="col-lg-6 col-md-8 col-sm-10">
-            <div className="card p-4 shadow border-0 m-4"> {/* Added m-4 for spacing */}
+            <div className="card p-4 shadow border-0 m-4">
               <h3 className="fw-bold text-center text-orange">
                 Application Status
               </h3>
@@ -68,6 +100,7 @@ const Result = () => {
               >
                 {loading ? "Checking..." : "Check Status"}
               </button>
+
               {status && (
                 <div
                   className={`mt-3 alert ${
@@ -78,8 +111,19 @@ const Result = () => {
                       : "alert-warning"
                   }`}
                 >
-                  {status}
+                  {status === "ID not found" ? (
+                    status
+                  ) : (
+                    <>
+                      <strong>{name}</strong> - {status}
+                    </>
+                  )}
                 </div>
+              )}
+
+              {/* Conditionally render the AdminEasterEgg */}
+              {status === "admin" && imageUrl && (
+                <AdminEasterEgg name={name} imageUrl={imageUrl} />
               )}
             </div>
           </div>
