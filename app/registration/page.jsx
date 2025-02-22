@@ -1,9 +1,12 @@
 import React from 'react'
 import Registration from "../components/reg";
+import GFormReg from "../components/gformreg";
+
 const page = () => {
   return (
     <>
-    <Registration />
+    <GFormReg/>
+    {/*<Registration />*/}
   </>
   )
 }

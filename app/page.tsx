@@ -119,7 +119,7 @@ const Home = () => {
       <HeroSection />
       <ElevatedSection />
       <BenefitsSection />
-      <SwiperSection />
+      {/*<SwiperSection />*/}
       {/*<CountdownSection />*/}
       <EventsCta/>
       <FAQSection />

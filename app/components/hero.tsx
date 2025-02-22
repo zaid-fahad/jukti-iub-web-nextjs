@@ -36,14 +36,20 @@ const HeroSection = () => {
                 <span className="text-orange"> JUKTI </span> is the
                 Faculty-Student Club of the Department of Computer Science and
                 Engineering of Independent University, Bangladesh
-                
+
               </p>
 
               <a
-                href="#"
+                href="/registration"
                 className="btn btn-dark-navy btn-lg btn-outline-orange me-4 mt-1 mt-sm-0"
               >
                 Register now!
+              </a>
+              <a
+                href="#"
+                className="btn btn-lg btn-orange me-4 mt-1 mt-sm-0"
+              >
+                Check Result!
               </a>
             </div>
           </div>
