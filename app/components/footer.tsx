@@ -104,7 +104,16 @@ const Footer = () => {
           style={{ textDecoration: "none", color: "#ff6600" }}
         >
           Rashedur Rahman
+        </a>{" "} Forked from
+        <a 
+          href="https://github.com/r-Shabab/JUKTI" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          style={{ textDecoration: "none", color: "#ff6600" }}
+        >
+          r-Shabab/JUKTI
         </a>
+
       </div>
     </section>
   );
