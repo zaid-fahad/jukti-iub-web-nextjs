@@ -1,6 +1,5 @@
 import React from 'react';
 import { FaFacebook, FaLinkedin, FaInstagram } from 'react-icons/fa';
-import Image from 'next/image';
 
 const BoardCard = ({ name, position, image, socialLinks }) => {
   return (
@@ -10,12 +9,13 @@ const BoardCard = ({ name, position, image, socialLinks }) => {
           <div className="text-center">
             <div className="mb-3">
               <div className="d-inline-block rounded-circle border border-5 border-orange">
-                <Image
+                <img
                   src={image}
                   height={150}
                   width={150}
                   alt={name}
                   className="rounded-circle"
+                  style={{ objectFit: 'cover' }}
                 />
               </div>
             </div>
