@@ -6,6 +6,7 @@ import BoardCard from "../components/board_card";
 const About = () => {
   const [advisors, setAdvisors] = useState([]);
   const [executives, setExecutives] = useState([]);
+  const [subExecutives, setSubExecutives] = useState([]);
   const [activeMembers, setActiveMembers] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -15,15 +16,17 @@ const About = () => {
         const baseUrl =
           "https://script.google.com/macros/s/AKfycbxGit2TPiyIEeehlpd5zsp6fdLO0QbKEssjO8FtzIc9IuQecCx1JSXvnNS8yim8ALgjsQ/exec?sheet=";
 
-        const [advisorRes, executiveRes, activeMemberRes] = await Promise.all([
+        const [advisorRes, executiveRes, subExecutiveRes, activeMemberRes] = await Promise.all([
           fetch(`${baseUrl}Advisor`),
           fetch(`${baseUrl}EB`),
+          fetch(`${baseUrl}Sub%20EB`),
           fetch(`${baseUrl}Active%20Members`),
         ]);
 
-        const [advisorData, executiveData, activeMemberData] =
+        const [advisorData, executiveData, subExecutiveData, activeMemberData] =
           await Promise.all([
             advisorRes.json(),
+            subExecutiveRes.json(),
             executiveRes.json(),
             activeMemberRes.json(),
           ]);
@@ -31,6 +34,7 @@ const About = () => {
         console.log(advisorData); // Log the raw data to check image field
         setAdvisors(advisorData);
         setExecutives(executiveData);
+        setSubExecutives(subExecutiveData);
         setActiveMembers(activeMemberData);
         setLoading(false);
       } catch (error) {
@@ -101,6 +105,28 @@ const About = () => {
                   facebook: executive.Facebook,
                   linkedin: executive.LinkedIn,
                   instagram: executive.Instagram,
+                }}
+              />
+            ))}
+          </Row>
+        </Container>
+      </section>
+
+      <section className="my-5">
+        <h1 className="text-4xl font-bold mb-4 text-center">Sub Executive Board</h1>
+        <Container>
+          <Row>
+            {subExecutives.map((subExecutive, index) => (
+              <BoardCard
+                key={index}
+                name={subExecutive.Name}
+                position={subExecutive.Position}
+                // Same check for image
+                image={subExecutive.Image && subExecutive.Image.trim() !== "" ? subExecutive.Image : defaultImageUrl}
+                socialLinks={{
+                  facebook: subExecutive.Facebook,
+                  linkedin: subExecutive.LinkedIn,
+                  instagram: subExecutive.Instagram,
                 }}
               />
             ))}
