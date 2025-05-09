@@ -1,4 +1,6 @@
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { Container, Row } from "react-bootstrap";
+
 
 const Footer = () => {
   return (
@@ -11,7 +13,7 @@ const Footer = () => {
         overflowX: "hidden", // Prevent horizontal overflow
       }}
     >
-      <div className="container-fluid p-5">
+      <div className="container p-5">
         <div className="row align-items-center text-center text-md-start">
           {/* Left Column (Text) */}
           <div className="col-md-6 mb-4 mb-md-0">
@@ -75,7 +77,7 @@ const Footer = () => {
           </div>
 
           {/* Right Column (Image) */}
-          <div className="col-md-6 text-center">
+          <div className="col-md-6 text-end">
             <img
               src="/img/jukti_logo.webp"
               alt="Footer Image"

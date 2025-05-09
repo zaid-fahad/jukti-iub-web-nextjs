@@ -1,6 +1,7 @@
 "use client";
 // import React from 'react'
 import React, { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PastEvents from "../components/pastevents";
 import UpcomingEvents from "../components/upcomingevent";
 
@@ -33,7 +34,7 @@ const Events = () => {
     <PastEvents />
 
 
-    <section className="bg-dark-navy">
+    <section className="bg-black">
       <div className="container d-flex flex-column justify-content-center align-items-center py-5">
         <h2 className="display-5 text-light">Collaborate with Us</h2>
         <p className="text-light text-center lead">
@@ -96,11 +97,25 @@ const Events = () => {
             </div>
           </div>
         </div>
+        <div className="col-md-6 text-center p-3">
+            <a
+              href="/eventPage"
+              className="btn btn-lg btn-orange text-white mt-4"
+              style={{
+                backgroundColor: "#ff5722",
+                borderColor: "#ff5722",
+                padding: "10px 20px", // Added padding for the button
+                fontSize: "1.2rem", // Increased font size for better readability
+              }}
+            >
+              Learn More
+            </a>
+          </div>
       </div>
     </section>
 
     {/* <!-- Form --> */}
-    <div className="container my-5">
+    {/*<div className="container my-5">
       <div className="row justify-content-center">
         <div className="col-lg-8">
           <div className="registration-form">
@@ -224,7 +239,7 @@ const Events = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div>*/}
   </>
   )
 }
