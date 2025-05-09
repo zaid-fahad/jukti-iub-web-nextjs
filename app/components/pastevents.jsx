@@ -17,7 +17,7 @@ const PastEvents = () => {
               time="122Am"
               location="DMK-1009"
               // If image is null or empty, use default
-              image="https://zaidfahad.com/img/logo.jpg"
+              image="/img/Events/e9.PNG"
               link="3"
             />
             <EventCard
@@ -28,7 +28,7 @@ const PastEvents = () => {
               time="122Am"
               location="DMK-1009"
               // If image is null or empty, use default
-              image="https://zaidfahad.com/img/logo.jpg"
+              image="/img/Events/upevent1.jpg"
               link="3"
             />
             <EventCard
@@ -39,7 +39,7 @@ const PastEvents = () => {
               time="122Am"
               location="DMK-1009"
               // If image is null or empty, use default
-              image="https://zaidfahad.com/img/logo.jpg"
+              image="/img/Events/upevent2.jpg"
               link="3"
             />
             <EventCard
@@ -50,7 +50,7 @@ const PastEvents = () => {
               time="122Am"
               location="DMK-1009"
               // If image is null or empty, use default
-              image="https://zaidfahad.com/img/logo.jpg"
+              image="/img/Events/e3.PNG"
               link="3"
             />
             <EventCard
@@ -61,7 +61,7 @@ const PastEvents = () => {
               time="122Am"
               location="DMK-1009"
               // If image is null or empty, use default
-              image="https://zaidfahad.com/img/logo.jpg"
+              image="/img/Events/e6.PNG"
               link="3"
             />
         </Row>

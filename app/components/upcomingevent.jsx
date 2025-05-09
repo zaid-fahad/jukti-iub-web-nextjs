@@ -14,7 +14,7 @@ const events = [
     date: "28/08/2024",
     time: "12:00 AM",
     location: "DMK-1009",
-    image: "https://zaidfahad.com/img/logo.jpg",
+    image: "/img/Events/upevent1.jpg",
     link: "/event/3",
   },
   {
@@ -23,7 +23,7 @@ const events = [
     date: "30/09/2024",
     time: "10:00 AM",
     location: "SECS Lobby",
-    image: "https://zaidfahad.com/img/hack.jpg",
+    image: "/img/Events/image3.PNG",
     link: "/event/4",
   },
   {
@@ -32,7 +32,7 @@ const events = [
     date: "15/10/2024",
     time: "3:00 PM",
     location: "AUD-1002",
-    image: "https://zaidfahad.com/img/talk.jpg",
+    image: "/img/Events/upevent2.jpg",
     link: "/event/5",
   },
 ];

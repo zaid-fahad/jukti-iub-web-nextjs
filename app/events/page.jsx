@@ -26,15 +26,7 @@ const Events = () => {
       </div>
     </section>
 
-    <UpcomingEvents
-      name="Jukti Reunion"
-      type="Seminar"
-      date="28/08/2024"
-      time="12:00 AM"
-      location="DMK-1009"
-      image="https://zaidfahad.com/img/logo.jpg"
-      link="/event/3"
-    />
+    <UpcomingEvents/>
 
     <PastEvents />
 
@@ -110,7 +102,7 @@ const Events = () => {
         </div>
         <div className="col-md-6 text-center p-3">
             <a
-              href="/eventPage"
+              href="/contactUs"
               className="btn btn-lg btn-orange text-white mt-4"
               style={{
                 backgroundColor: "#ff5722",
@@ -119,7 +111,7 @@ const Events = () => {
                 fontSize: "1.2rem", // Increased font size for better readability
               }}
             >
-              Learn More
+              Contact Us
             </a>
           </div>
       </div>
