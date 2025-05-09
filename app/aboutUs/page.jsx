@@ -46,7 +46,24 @@ const About = () => {
     fetchData();
   }, []);
 
-  const defaultImageUrl = "https://zaidfahad.com/img/logo.jpg";
+  const renderImage = (url) => {
+    const defaultImageUrl = "https://zaidfahad.com/img/logo.jpg";
+
+    if (!url || url.trim() === "" || url === "null" || url === "undefined") {
+      return defaultImageUrl;
+    }
+
+    // Check for Google Drive file link and convert
+    const driveMatch = url.match(/drive\.google\.com\/file\/d\/([a-zA-Z0-9_-]+)/);
+    if (driveMatch && driveMatch[1]) {
+      const fileId = driveMatch[1];
+      return `https://lh3.googleusercontent.com/d/${fileId}=w500`;
+    }
+
+    // Return original URL if not a Drive link
+    return url;
+  };
+
 
   if (loading) {
     return (
@@ -78,7 +95,7 @@ const About = () => {
                 name={advisor.Name}
                 position={advisor.Position}
                 // If image is null or empty, use default
-                image={advisor.Image && advisor.Image.trim() !== "" ? advisor.Image : defaultImageUrl}
+                image={renderImage(advisor.Image)}
                 socialLinks={{
                   facebook: advisor.Facebook,
                   linkedin: advisor.LinkedIn,
@@ -100,7 +117,7 @@ const About = () => {
                 name={executive.Name}
                 position={executive.Position}
                 // Same check for image
-                image={executive.Image && executive.Image.trim() !== "" ? executive.Image : defaultImageUrl}
+                image={renderImage(executive.Image)}
                 socialLinks={{
                   facebook: executive.Facebook,
                   linkedin: executive.LinkedIn,
@@ -122,7 +139,7 @@ const About = () => {
                 name={subExecutive.Name}
                 position={subExecutive.Position}
                 // Same check for image
-                image={subExecutive.Image && subExecutive.Image.trim() !== "" ? subExecutive.Image : defaultImageUrl}
+                image={renderImage(subExecutive.Image)}
                 socialLinks={{
                   facebook: subExecutive.Facebook,
                   linkedin: subExecutive.LinkedIn,
@@ -144,7 +161,7 @@ const About = () => {
                 name={member.Name}
                 position={member.Position}
                 // Same check for image
-                image={member.Image && member.Image.trim() !== "" ? member.Image : defaultImageUrl}
+                image={renderImage(member.Image)}
                 socialLinks={{
                   facebook: member.Facebook,
                   linkedin: member.LinkedIn,
