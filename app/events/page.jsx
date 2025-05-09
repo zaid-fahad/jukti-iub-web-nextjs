@@ -5,7 +5,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PastEvents from "../components/pastevents";
 import UpcomingEvents from "../components/upcomingevent";
 
-
+import {
+  faHandshake,
+  faMicrophone,
+  faLaptopCode,
+  faBusinessTime,
+} from "@fortawesome/free-solid-svg-icons";
 
 
 const Events = () => {
@@ -34,7 +39,9 @@ const Events = () => {
     <PastEvents />
 
 
-    <section className="bg-black">
+    <section className="bg" style={{
+      backgroundColor:"#212528",
+    }}>
       <div className="container d-flex flex-column justify-content-center align-items-center py-5">
         <h2 className="display-5 text-light">Collaborate with Us</h2>
         <p className="text-light text-center lead">
@@ -49,7 +56,7 @@ const Events = () => {
             <div className="row row-cols-1 row-cols-md-4 g-5">
               <div className="col">
                 <div className="collab-item text-center border rounded p-3">
-                  <i className="text-light fa-solid fa-handshake"></i>
+                  <FontAwesomeIcon icon={faHandshake} className="text-light fa-2x mb-2" />
                   <h3 className="text-orange">Sponsorship</h3>
                   <hr />
                   <p className="text-light text-center">
@@ -59,9 +66,10 @@ const Events = () => {
                   </p>
                 </div>
               </div>
+
               <div className="col">
                 <div className="collab-item text-center border rounded p-3">
-                  <i className="text-light fa-solid fa-microphone"></i>
+                  <FontAwesomeIcon icon={faMicrophone} className="text-light fa-2x mb-2" />
                   <h3 className="text-orange">Speaker</h3>
                   <hr />
                   <p className="text-light text-center">
@@ -71,9 +79,10 @@ const Events = () => {
                   </p>
                 </div>
               </div>
+
               <div className="col">
                 <div className="collab-item text-center border rounded p-3">
-                  <i className=" text-light fa-solid fa-laptop-code"></i>
+                  <FontAwesomeIcon icon={faLaptopCode} className="text-light fa-2x mb-2" />
                   <h3 className="text-orange">Workshops</h3>
                   <hr />
                   <p className="text-light text-center">
@@ -82,9 +91,10 @@ const Events = () => {
                   </p>
                 </div>
               </div>
+
               <div className="col">
                 <div className="collab-item text-center border rounded p-3">
-                  <i className="text-light fa-sharp fa-solid fa-business-time"></i>
+                  <FontAwesomeIcon icon={faBusinessTime} className="text-light fa-2x mb-2" />
                   <h3 className="text-orange">Opportunities</h3>
                   <hr />
                   <p className="text-light text-center">
@@ -94,6 +104,7 @@ const Events = () => {
                   </p>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
