@@ -23,7 +23,7 @@ const HeroEvent = ({ name, type, date, time, location, image, link }) => {
     <div
       style={{
         width: "100%",
-        minHeight: "40vh",
+        minHeight: "60vh",
         backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.8)), url(${image})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
