@@ -77,7 +77,7 @@ const About = () => {
     <>
       <section className="bg-dark-navy">
         <div className="container d-flex flex-column justify-content-center align-items-center py-5">
-          <h2 className="display-1 text-light">ABOUT US</h2>
+          <h2 className="display-5 text-light">ABOUT US</h2>
           <p className="text-light text-center lead">
             Empowering Minds, Igniting Innovations - Unleashing the Potential of
             Computer Science and Engineering.
@@ -88,7 +88,7 @@ const About = () => {
       <section className="my-5">
         <h1 className="text-4xl font-bold mb-4 text-center">Advisory Board</h1>
         <Container>
-          <Row>
+          <Row className="justify-content-center">
             {advisors.map((advisor, index) => (
               <BoardCard
                 key={index}
@@ -110,7 +110,7 @@ const About = () => {
       <section className="my-5">
         <h1 className="text-4xl font-bold mb-4 text-center">Executive Board</h1>
         <Container>
-          <Row>
+          <Row >
             {executives.map((executive, index) => (
               <BoardCard
                 key={index}
