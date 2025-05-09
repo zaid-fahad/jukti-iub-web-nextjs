@@ -8,7 +8,7 @@ const PastEvents = () => {
     <section className="my-5">
       <h1 className="text-4xl font-bold mb-4 text-center">Past Events</h1>
       <Container>
-        <Row className="justify-content-start">
+        <Row className="justify-content-center">
             <EventCard
               // key={index}
               name="Jukti Reunion"
