@@ -1,6 +1,17 @@
 import React from 'react';
 import { FaFacebook, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
+// Capitalize each word in a string
+const capitalizeWords = (str) => {
+  return str
+    ? str
+        .toLowerCase()
+        .split(' ')
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ')
+    : '';
+};
+
 const BoardCard = ({ name, position, image, socialLinks }) => {
   return (
     <div className="col-lg-4 mb-4">
@@ -19,8 +30,8 @@ const BoardCard = ({ name, position, image, socialLinks }) => {
                 />
               </div>
             </div>
-            <h2 className="fs-4 font-weight-bold text-dark">{name}</h2>
-            <h5 className="fs-6 text-muted mb-3">{position}</h5>
+            <h2 className="fs-4 font-weight-bold text-dark">{capitalizeWords(name)}</h2>
+            <h5 className="fs-6 text-muted mb-3">{capitalizeWords(position)}</h5>
           </div>
           <div className="text-center">
             <div className="icons d-flex justify-content-center gap-3">
