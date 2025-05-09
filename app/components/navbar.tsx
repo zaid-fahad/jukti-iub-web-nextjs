@@ -33,7 +33,7 @@ const NavBar = () => {
             <li className="nav-item">
               <Nav.Link
                 className={`nav-Nav.Link fs-5 me-3`}
-                href="/eventPage"
+                href="/events"
               >
                 <FontAwesomeIcon icon={faCalendarCheck} className="me-2 d-inline d-lg-none" />
                 Events

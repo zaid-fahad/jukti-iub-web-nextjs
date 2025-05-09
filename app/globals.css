@@ -418,9 +418,9 @@ section.events .owl-carousel button.active {
 .narrower-card {
   max-width: 20rem;
 }
-img {
+/*img {
   border-radius: 50%;
-}
+}*/
 /* Video */
 
 /* section.video {
