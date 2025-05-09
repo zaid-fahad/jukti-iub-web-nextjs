@@ -19,16 +19,19 @@ const InfoRow = ({ icon: Icon, text }) => (
 
 const EventCard = ({ name, type, date, time, location, image, link }) => {
   return (
-    <div
-      style={{
-        maxWidth: "400px",
-        backgroundColor: "#fff",
-        borderRadius: "15px",
-        overflow: "hidden",
-        boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
-        transition: "transform 0.2s ease-in-out",
-      }}
+    <div className="col-lg-4 mb-4 "
+      // style={{
+      //   maxWidth: "350px",
+      //   backgroundColor: "#fff",
+      //   margin: "10px",
+      //   padding: "0px",
+      //   borderRadius: "15px",
+      //   overflow: "hidden",
+      //   boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+      //   transition: "transform 0.2s ease-in-out",
+      // }}
     >
+    <div className= "card border-0 shadow-lg rounded-lg overflow-hidden">
       <img
         src={image}
         alt={name}
@@ -41,7 +44,7 @@ const EventCard = ({ name, type, date, time, location, image, link }) => {
         }}
       />
 
-      <div style={{ padding: "16px" }}>
+      <div style={{ padding: "20px" }}>
         <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "12px" }}>
           <h4 style={{ fontSize: "1.5rem", fontWeight: "600", color: "#333", margin: 0 }}>
             {capitalizeWords(name)}
@@ -86,6 +89,7 @@ const EventCard = ({ name, type, date, time, location, image, link }) => {
           View More <i className="fa fa-angle-double-right" style={{ marginLeft: "6px" }}></i>
         </a>
       </div>
+     </div> 
     </div>
   );
 };
