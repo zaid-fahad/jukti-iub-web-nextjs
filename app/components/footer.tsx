@@ -77,7 +77,7 @@ const Footer = () => {
           </div>
 
           {/* Right Column (Image) */}
-          <div className="col-md-6 text-end">
+          <div className="col-md-6 text-center">
             <img
               src="/img/jukti_logo.webp"
               alt="Footer Image"
