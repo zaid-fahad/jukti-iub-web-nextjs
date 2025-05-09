@@ -1,6 +1,6 @@
 import React from "react";
 
-const PastEvents = () => {
+const UpcomingEvents = () => {
   return (
     <>
     <section id="carousel-section">
@@ -156,4 +156,4 @@ const PastEvents = () => {
   );
 };
 
-export default PastEvents;
+export default UpcomingEvents;

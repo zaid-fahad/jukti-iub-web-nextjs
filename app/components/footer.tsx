@@ -19,7 +19,7 @@ const Footer = () => {
               <span className="text-orange"> JUKTI </span>
             </h1>
             <h4 className="fw-bold mb-3" style={{ fontSize: "1.5rem" }}>
-              The Official Club of the Department of CSE
+              Club of the Department of CSE
             </h4>
             <p className="lead" style={{ fontSize: "1rem" }}>
               <span className="text-orange"> JUKTI </span> is the Faculty-Student Club of the Department of Computer Science and Engineering, Independent University, Bangladesh.

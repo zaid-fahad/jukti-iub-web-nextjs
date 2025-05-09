@@ -15,7 +15,7 @@ const NavBar = () => {
           className="navbar-brand text-orange fs-2 fw-bold ms-2 me-auto"
           href="/"
         >
-          JUKTI <span className="fs-6">-Official Club of CSE</span>
+          JUKTI <span className="fs-6">- Club of CSE</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="collapse navbar-collapse" id="navbarNav">
