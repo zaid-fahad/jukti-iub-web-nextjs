@@ -3,11 +3,10 @@ import React, { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import BoardCard from "../components/board_card";
 
-const About = () => {
+const ExecutivePanel = () => {
   const [advisors, setAdvisors] = useState([]);
   const [executives, setExecutives] = useState([]);
   const [subExecutives, setSubExecutives] = useState([]);
-  const [activeMembers, setActiveMembers] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -16,26 +15,23 @@ const About = () => {
         const baseUrl =
           "https://script.google.com/macros/s/AKfycbxGit2TPiyIEeehlpd5zsp6fdLO0QbKEssjO8FtzIc9IuQecCx1JSXvnNS8yim8ALgjsQ/exec?sheet=";
 
-        const [advisorRes, executiveRes, subExecutiveRes, activeMemberRes] = await Promise.all([
+        const [advisorRes, executiveRes, subExecutiveRes,] = await Promise.all([
           fetch(`${baseUrl}Advisor`),
           fetch(`${baseUrl}EB`),
           fetch(`${baseUrl}Sub%20EB`),
-          fetch(`${baseUrl}Active%20Members`),
         ]);
 
-        const [advisorData, executiveData, subExecutiveData, activeMemberData] =
+        const [advisorData, executiveData, subExecutiveData,] =
           await Promise.all([
             advisorRes.json(),
             subExecutiveRes.json(),
             executiveRes.json(),
-            activeMemberRes.json(),
           ]);
 
         console.log(advisorData); // Log the raw data to check image field
         setAdvisors(advisorData);
         setExecutives(executiveData);
         setSubExecutives(subExecutiveData);
-        setActiveMembers(activeMemberData);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -77,7 +73,7 @@ const About = () => {
     <>
       <section style={{backgroundColor: "#fff1e5",}}>
         <div className="container d-flex flex-column justify-content-center align-items-center py-5">
-          <h2 className="display-5 text-main">ABOUT US</h2>
+          <h2 className="display-5 text-main">Executive Board</h2>
           <p className="text-main text-center lead">
             Empowering Minds, Igniting Innovations - Unleashing the Potential of
             Computer Science and Engineering.
@@ -150,30 +146,8 @@ const About = () => {
           </Row>
         </Container>
       </section>
-
-      <section className="my-5">
-        <h1 className="text-4xl font-bold mb-4 text-center">Active Members</h1>
-        <Container>
-          <Row>
-            {activeMembers.map((member, index) => (
-              <BoardCard
-                key={index}
-                name={member.Name}
-                position={member.Position}
-                // Same check for image
-                image={renderImage(member.Image)}
-                socialLinks={{
-                  facebook: member.Facebook,
-                  linkedin: member.LinkedIn,
-                  instagram: member.Instagram,
-                }}
-              />
-            ))}
-          </Row>
-        </Container>
-      </section>
     </>
   );
 };
 
-export default About;
+export default ExecutivePanel;

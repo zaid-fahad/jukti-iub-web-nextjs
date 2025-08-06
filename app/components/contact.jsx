@@ -3,10 +3,10 @@ import "./contact.css";
 const ContactUs = () => {
   return (
     <>
-      <section className="bg-dark-navy">
+      <section style={{backgroundColor: "#fff1e5",}}>
         <div className="container d-flex flex-column justify-content-center align-items-center py-5">
-          <h2 className="display-1 text-light">CONTACT US</h2>
-          <p className="text-light text-center lead">
+          <h2 className="display-1 text-main">CONTACT US</h2>
+          <p className="text-main text-center lead">
             Got a question or want to collaborate? Contact us today and let's
             make great things happen together!
           </p>

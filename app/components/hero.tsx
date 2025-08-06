@@ -1,10 +1,11 @@
 const HeroSection = () => {
   return (
     <section
-      className="hero text-main-background py-5 ps-3 ps-sm-0"
+      className="hero text-main py-5 ps-3 ps-sm-0"
       style={{
         position: "relative",
-        backgroundColor: "#081420",
+        backgroundColor: "#fff1e5",
+
         minHeight: "60vh",
       }}
     >

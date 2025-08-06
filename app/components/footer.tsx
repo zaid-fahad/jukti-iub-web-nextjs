@@ -5,10 +5,12 @@ import { Container, Row } from "react-bootstrap";
 const Footer = () => {
   return (
     <section
-      className="footer text-main-background py-5"
+      className="footer text-main py-5"
       style={{
         position: "relative",
-        backgroundColor: "#081420",
+        // backgroundColor: "#081420",
+        backgroundColor: "#fff1e5",
+
         minHeight: "200px",
         overflowX: "hidden", // Prevent horizontal overflow
       }}
@@ -17,9 +19,15 @@ const Footer = () => {
         <div className="row align-items-center text-center text-md-start">
           {/* Left Column (Text) */}
           <div className="col-md-6 mb-4 mb-md-0">
-            <h1>
+            {/*<h1>
               <span className="text-orange"> JUKTI </span>
-            </h1>
+            </h1>*/}
+            <img
+              src="/img/jukti_logo_type.png"
+              alt="Footer Image"
+              className="img-fluid"
+              style={{ width: "40%", maxWidth: "500px" }} // Responsive image size
+            />
             <h4 className="fw-bold mb-3" style={{ fontSize: "1.5rem" }}>
               Club of the Department of CSE
             </h4>
@@ -30,7 +38,7 @@ const Footer = () => {
               Email:{" "}
               <a
                 href="mailto:jukti.iub@gmail.com"
-                className="text-white"
+                className="text-dark"
                 style={{ fontSize: "1.5rem", fontWeight: "bold" }}
               >
                 jukti.iub@gmail.com
@@ -39,7 +47,7 @@ const Footer = () => {
             <div className="social-icons mt-3">
               <a
                 href="https://www.facebook.com/jukti.cse.iub"
-                className="text-white me-3"
+                className="text-dark me-3"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ fontSize: "1.5rem" }}
@@ -57,7 +65,7 @@ const Footer = () => {
               </a>*/}
               <a
                 href="https://www.instagram.com/jukti.official/"
-                className="text-white me-3"
+                className="text-dark me-3"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ fontSize: "1.5rem" }}
@@ -66,7 +74,7 @@ const Footer = () => {
               </a>
               <a
                 href="https://www.linkedin.com/company/jukti-iub/"
-                className="text-white"
+                className="text-dark"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ fontSize: "1.5rem" }}
@@ -79,17 +87,23 @@ const Footer = () => {
           {/* Right Column (Image) */}
           <div className="col-md-6 text-center">
             <img
-              src="/img/jukti_logo.webp"
+              src="/img/iub_logo.png"
               alt="Footer Image"
               className="img-fluid"
-              style={{ width: "20%", maxWidth: "150px" }} // Responsive image size
+              style={{ width: "35%", maxWidth: "500px" }} // Responsive image size
+            />
+            <img
+              src="/img/cse_logo.png"
+              alt="Footer Image"
+              className="img-fluid"
+              style={{ width: "30%", maxWidth: "500px" }} // Responsive image size
             />
           </div>
         </div>
       </div>
       
       {/* Credit Line */}
-      <div className="text-center py-5" style={{ color: "#ffffff", fontSize: "0.9rem" }}>
+      <div className="text-center text-main py-5" style={{ fontSize: "0.9rem" }}>
         Crafted to inspire by{" "}
         <a 
           href="https://zaidfahad.com" 

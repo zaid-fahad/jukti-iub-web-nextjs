@@ -16,10 +16,10 @@ import {
 const Events = () => {
   return (
     <>
-    <section className="bg-dark-navy">
+    <section style={{backgroundColor: "#fff1e5",}}>
       <div className="container d-flex flex-column justify-content-center align-items-center py-5">
-        <h2 className="display-5 text-light">Events</h2>
-        <p className="text-light text-center lead">
+        <h2 className="display-5 text-main">Events</h2>
+        <p className="text-main text-center lead">
           Empowering Minds, Igniting Innovations - Unleashing the Potential of
           Computer Science and Engineering.
         </p>
