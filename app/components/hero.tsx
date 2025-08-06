@@ -30,7 +30,7 @@ const HeroSection = () => {
               <h1 className="display-3 fw-bold mb-3">
                 JUKTI{" "}<br></br>
                 <span className="display-6 d-block d-md-inline">
-                The Official Club of CSE
+                Club of CSE
                 </span>
               </h1>
               <p className="lead">
@@ -40,7 +40,7 @@ const HeroSection = () => {
 
               </p>
 
-              <a
+           {/*   <a
                 href="/registration"
                 className="btn btn-dark-navy btn-lg btn-outline-orange me-4 mt-1 mt-sm-0"
               >
@@ -51,7 +51,7 @@ const HeroSection = () => {
                 className="btn btn-lg btn-orange me-4 mt-1 mt-sm-0"
               >
                 Check Result!
-              </a>
+              </a>*/}
             </div>
           </div>
 

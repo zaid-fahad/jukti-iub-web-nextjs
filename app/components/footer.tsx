@@ -114,7 +114,7 @@ const Footer = () => {
           Zaid Fahad
         </a> &{" "}
         <a 
-          href="https://www.linkedin.com/in/rashedur-rahman-arafat-5b6357310/" 
+          href="https://arafatrahman.pages.dev" 
           target="_blank" 
           rel="noopener noreferrer"
           style={{ textDecoration: "none", color: "#ff6600" }}
